@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Мій особистий сайт</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fc;
+            color: #242424;
+            line-height: 1.6;
+        }
+
+        /* МЕНЮ */
+        header {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #6c63ff;
+        }
+
+        /* ГОЛОВНА */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #eef0ff, #ffffff);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #574fd6;
+        }
+
+        /* РОЗДІЛИ */
+        section {
+            padding: 80px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* КАРТКИ */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* КОНТАКТИ */
+        .contact {
+            text-align: center;
+            background: #eef0ff;
+        }
+
+        /* НИЖНЯ ЧАСТИНА */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- МЕНЮ -->
+    <header>
+        <div class="logo">Заріна</div>
+
+        <nav>
+            <a href="#about">Про мене</a>
+            <a href="#education">Навчання</a>
+            <a href="#hobbies">Захоплення</a>
+            <a href="#volunteering">Волонтерство</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+    </header>
+
+
+    <!-- ГОЛОВНА -->
+    <section class="hero">
+        <div>
+            <h1>Привіт! Я Заріна 👋</h1>
+
+            <p>
+                Ласкаво прошу на мій особистий сайт.
+                Тут я розповідаю про себе, свої захоплення,
+                навчання, досягнення та проєкти.
+            </p>
+
+            <a href="#about" class="button">Дізнатися більше</a>
+        </div>
+    </section>
+
+
+    <!-- ПРО МЕНЕ -->
+    <section id="about">
+        <h2>Про мене</h2>
+
+        <div class="about">
+            <p>
+                Я людина, яка любить ставити перед собою високі цілі
+                та працювати над їх досягненням. Для мене важливі
+                розвиток, навчання, нові знайомства та можливість
+                робити щось корисне для інших.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- НАВЧАННЯ -->
+    <section id="education">
+        <h2>Навчання 🎓</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Освіта</h3>
+                <p>
+                    Тут я розповім про своє навчання,
+                    улюблені предмети та освітні цілі.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Мої цілі</h3>
+                <p>
+                    Постійно розвиватися, отримувати нові знання
+                    та рухатися до своїх мрій.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Досягнення</h3>
+                <p>
+                    Тут можна додати мої грамоти,
+                    результати та інші досягнення.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ЗАХОПЛЕННЯ -->
+    <section id="hobbies">
+        <h2>Мої захоплення 🏇</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Спорт</h3>
+                <p>
+                    Спорт навчив мене дисципліни,
+                    наполегливості та не боятися труднощів.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Верхова їзда</h3>
+                <p>
+                    Одне з моїх особливих захоплень —
+                    проводити час із кіньми.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Нові знання</h3>
+                <p>
+                    Мені цікаво дізнаватися нове,
+                    розвивати свої навички та пробувати різні речі.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ВОЛОНТЕРСТВО -->
+    <section id="volunteering">
+        <h2>Волонтерство 💙</h2>
+
+        <div class="about">
+            <p>
+                Волонтерство для мене — це можливість допомагати іншим,
+                працювати в команді та робити свій внесок у важливі справи.
+            </p>
+
+            <br>
+
+            <p>
+                Тут я додам інформацію про свої волонтерські проєкти,
+                досвід та діяльність.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- КОНТАКТИ -->
+    <section id="contact" class="contact">
+        <h2>Зв'язатися зі мною 📩</h2>
+
+        <p>
+            Дякую, що завітали на мій сайт!
+        </p>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Заріна. Мій особистий сайт.</p>
+    </footer>
+
+</body>
+</html>
