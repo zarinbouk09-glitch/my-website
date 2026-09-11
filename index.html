@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Мій особистий сайт</title>
+    <title>Заріна | Особистий сайт</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -18,154 +20,525 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f8fc;
-            color: #242424;
-            line-height: 1.6;
+            font-family: 'DM Sans', sans-serif;
+            background: #f8f5ef;
+            color: #332d27;
+            line-height: 1.7;
         }
 
-        /* МЕНЮ */
-        header {
-            background: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        /* ===== ЗАГАЛЬНІ НАЛАШТУВАННЯ ===== */
+
+        section {
+            padding: 100px 9%;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin-left: 25px;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
             font-weight: 500;
         }
 
-        nav a:hover {
-            color: #6c63ff;
+        h2 {
+            font-size: 46px;
+            margin-bottom: 45px;
         }
 
-        /* ГОЛОВНА */
-        .hero {
-            min-height: 90vh;
+        .section-label {
+            color: #9a7655;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* ===== МЕНЮ ===== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(248, 245, 239, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #e7dfd4;
+
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+
+            padding: 20px 8%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: #493c31;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #5e554d;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #9a7655;
+        }
+
+        /* ===== ГОЛОВНИЙ ЕКРАН ===== */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #eef0ff, #ffffff);
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(circle at 20% 20%, #eee3d5 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #eadfd2 0%, transparent 30%),
+                #f8f5ef;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            color: #9a7655;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
+            font-size: clamp(58px, 9vw, 105px);
+            line-height: 1;
+            color: #332b24;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #9a7655;
+            font-style: italic;
         }
 
         .hero p {
-            font-size: 20px;
-            color: #666;
-            max-width: 650px;
+            max-width: 680px;
             margin: auto;
+            color: #71675f;
+            font-size: 18px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            background: #6c63ff;
-            color: white;
+
+            margin-top: 35px;
+            padding: 14px 30px;
+
+            border: 1px solid #9a7655;
+            border-radius: 50px;
+
+            color: #624d3c;
             text-decoration: none;
-            border-radius: 30px;
+
             transition: 0.3s;
         }
 
         .button:hover {
+            background: #9a7655;
+            color: white;
             transform: translateY(-3px);
-            background: #574fd6;
         }
 
-        /* РОЗДІЛИ */
-        section {
-            padding: 80px 10%;
+        /* ===== ПРО МЕНЕ ===== */
+
+        .about-section {
+            background: #fffdf9;
         }
 
-        section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        .about {
-            max-width: 850px;
+        .about-container {
+            max-width: 1000px;
             margin: auto;
-            text-align: center;
-            font-size: 18px;
+
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 70px;
+            align-items: center;
         }
 
-        /* КАРТКИ */
+        .about-decoration {
+            height: 400px;
+
+            background:
+                linear-gradient(145deg, #e7d9ca, #f2ebe3);
+
+            border-radius: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: #9a7655;
+        }
+
+        .about-text p {
+            color: #665e57;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding-left: 25px;
+            border-left: 2px solid #b89b7d;
+
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            font-style: italic;
+            color: #59483a;
+        }
+
+        /* ===== ОСВІТА ===== */
+
+        .education {
+            background: #f8f5ef;
+        }
+
+        .education-intro {
+            max-width: 700px;
+            color: #71675f;
+            margin-bottom: 45px;
+        }
+
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            background: #fffdf9;
+            border: 1px solid #e7dfd4;
+
+            padding: 35px;
+
+            min-height: 220px;
+
+            transition: 0.35s;
         }
 
         .card:hover {
             transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(76, 60, 45, 0.08);
+        }
+
+        .card-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #9a7655;
+            margin-bottom: 25px;
         }
 
         .card h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
+            font-size: 25px;
+            margin-bottom: 15px;
         }
 
         .card p {
-            color: #666;
+            color: #756c64;
+            font-size: 15px;
         }
 
-        /* КОНТАКТИ */
-        .contact {
+        /* ===== ІНТЕРЕСИ ===== */
+
+        .interests {
+            background: #332d27;
+            color: #f8f5ef;
+        }
+
+        .interests .section-label {
+            color: #c8a989;
+        }
+
+        .interests h2 {
+            color: #f8f5ef;
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+
+            background: #63564b;
+
+            border: 1px solid #63564b;
+        }
+
+        .interest {
+            padding: 35px 25px;
+            background: #332d27;
+            transition: 0.3s;
+        }
+
+        .interest:hover {
+            background: #40372f;
+        }
+
+        .interest span {
+            display: block;
+
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .interest h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .interest p {
+            color: #c7bdb3;
+            font-size: 14px;
+        }
+
+        /* ===== ВЕРХОВА ЇЗДА ===== */
+
+        .horse-section {
+            background: #fffdf9;
+        }
+
+        .horse-content {
+            max-width: 950px;
+            margin: auto;
+
             text-align: center;
-            background: #eef0ff;
         }
 
-        /* НИЖНЯ ЧАСТИНА */
-        footer {
-            background: #222;
+        .horse-content p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+
+            color: #6d645c;
+            font-size: 17px;
+        }
+
+        .horse-year {
+            margin-top: 45px;
+
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            color: #9a7655;
+        }
+
+        /* ===== ВОЛОНТЕРСТВО ===== */
+
+        .volunteering {
+            background: #eee6dc;
+        }
+
+        .volunteer-box {
+            max-width: 850px;
+            margin: auto;
+
+            background: #fffdf9;
+            padding: 55px;
+
+            border-left: 3px solid #9a7655;
+        }
+
+        .volunteer-box p {
+            color: #665e57;
+            font-size: 17px;
+        }
+
+        /* ===== ЦІЛІ ===== */
+
+        .goals {
+            background: #f8f5ef;
+            text-align: center;
+        }
+
+        .goals-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .goals-content p {
+            color: #6e665f;
+            font-size: 18px;
+        }
+
+        .goal-line {
+            width: 70px;
+            height: 1px;
+            background: #9a7655;
+            margin: 35px auto;
+        }
+
+        /* ===== МІЙ СВІТ ===== */
+
+        .world {
+            background: #fffdf9;
+        }
+
+        .world-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .world-card {
+            padding: 40px 30px;
+            border: 1px solid #e7dfd4;
+            text-align: center;
+        }
+
+        .world-card .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .world-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .world-card p {
+            color: #756c64;
+        }
+
+        /* ===== КОНТАКТИ ===== */
+
+        .contact {
+            background: #332d27;
             color: white;
             text-align: center;
-            padding: 25px;
         }
 
-        @media (max-width: 700px) {
+        .contact h2 {
+            color: #f8f5ef;
+        }
+
+        .contact p {
+            color: #c8beb4;
+            margin-bottom: 25px;
+        }
+
+        .contact .button {
+            color: #f8f5ef;
+            border-color: #c8a989;
+        }
+
+        .contact .button:hover {
+            background: #c8a989;
+            color: #332d27;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            padding: 25px;
+            background: #27221e;
+            color: #a99e94;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ===== АНІМАЦІЇ ===== */
+
+        .fade {
+            animation: appear 1.2s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== ТЕЛЕФОН ===== */
+
+        @media (max-width: 850px) {
+
             header {
                 flex-direction: column;
                 gap: 15px;
             }
 
-            nav a {
-                margin: 0 7px;
-                font-size: 14px;
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
+            section {
+                padding: 75px 7%;
+            }
+
+            h2 {
+                font-size: 38px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-decoration {
+                height: 250px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .world-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .volunteer-box {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
             .hero h1 {
-                font-size: 40px;
+                font-size: 58px;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                font-size: 12px;
             }
         }
     </style>
@@ -174,151 +547,458 @@
 <body>
 
     <!-- МЕНЮ -->
+
     <header>
-        <div class="logo">Заріна</div>
+        <a href="#home" class="logo">Заріна</a>
 
         <nav>
             <a href="#about">Про мене</a>
-            <a href="#education">Навчання</a>
-            <a href="#hobbies">Захоплення</a>
-            <a href="#volunteering">Волонтерство</a>
+            <a href="#education">Освіта</a>
+            <a href="#interests">Інтереси</a>
+            <a href="#volunteering">Активність</a>
             <a href="#contact">Контакти</a>
         </nav>
     </header>
 
 
     <!-- ГОЛОВНА -->
-    <section class="hero">
-        <div>
-            <h1>Привіт! Я Заріна 👋</h1>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content fade">
+
+            <div class="hero-small">
+                Особистий простір
+            </div>
+
+            <h1>
+                Привіт, я <span>Заріна.</span>
+            </h1>
 
             <p>
-                Ласкаво прошу на мій особистий сайт.
-                Тут я розповідаю про себе, свої захоплення,
-                навчання, досягнення та проєкти.
+                Цікавлюся світом, люблю відкривати нові місця,
+                дізнаватися нове та постійно рухатися вперед.
+                Тут — частинка мого життя, моїх інтересів,
+                навчання та мрій.
             </p>
 
-            <a href="#about" class="button">Дізнатися більше</a>
+            <a href="#about" class="button">
+                Дізнатися більше
+            </a>
+
         </div>
+
     </section>
 
 
     <!-- ПРО МЕНЕ -->
-    <section id="about">
-        <h2>Про мене</h2>
 
-        <div class="about">
-            <p>
-                Я людина, яка любить ставити перед собою високі цілі
-                та працювати над їх досягненням. Для мене важливі
-                розвиток, навчання, нові знайомства та можливість
-                робити щось корисне для інших.
-            </p>
+    <section class="about-section" id="about">
+
+        <div class="about-container">
+
+            <div class="about-decoration">
+                З
+            </div>
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    01 — Про мене
+                </div>
+
+                <h2>
+                    Людина, яка любить досліджувати світ
+                </h2>
+
+                <p>
+                    Я Заріна — цілеспрямована та наполеглива людина,
+                    яка намагається дивитися на життя позитивно.
+                    Мені цікаво відкривати нові місця, подорожувати,
+                    читати та досліджувати теми, які мене захоплюють.
+                </p>
+
+                <p>
+                    Для мене важливі родина, розвиток та можливість
+                    постійно дізнаватися щось нове. Я люблю ставити
+                    перед собою цілі та шукати шляхи їх досягнення.
+                </p>
+
+                <div class="quote">
+                    «Мені цікаво не просто знати більше —
+                    мені цікаво розуміти світ навколо себе.»
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
 
-    <!-- НАВЧАННЯ -->
-    <section id="education">
-        <h2>Навчання 🎓</h2>
+    <!-- ОСВІТА -->
+
+    <section class="education" id="education">
+
+        <div class="section-label">
+            02 — Освіта
+        </div>
+
+        <h2>
+            Навчання та розвиток
+        </h2>
+
+        <p class="education-intro">
+            Я обираю навчання, яке справді мені цікаве,
+            тому зараз розвиваюся у напрямі, пов'язаному
+            з міжнародною інформацією.
+        </p>
 
         <div class="cards">
 
             <div class="card">
-                <h3>Освіта</h3>
+
+                <div class="card-number">01</div>
+
+                <h3>Університет</h3>
+
                 <p>
-                    Тут я розповім про своє навчання,
-                    улюблені предмети та освітні цілі.
+                    Навчаюся у Львівському національному університеті
+                    на напрямі, пов'язаному з міжнародною інформацією.
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>Мої цілі</h3>
-                <p>
-                    Постійно розвиватися, отримувати нові знання
-                    та рухатися до своїх мрій.
-                </p>
-            </div>
 
             <div class="card">
-                <h3>Досягнення</h3>
+
+                <div class="card-number">02</div>
+
+                <h3>Шкільні роки</h3>
+
                 <p>
-                    Тут можна додати мої грамоти,
-                    результати та інші досягнення.
+                    Закінчила школу на відмінно та брала участь
+                    в олімпіадах з англійської мови.
                 </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">03</div>
+
+                <h3>Майбутнє</h3>
+
+                <p>
+                    Мене цікавлять сфери, пов'язані з IT,
+                    аналітикою, інформацією та можливістю
+                    створювати корисні рішення.
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- ЗАХОПЛЕННЯ -->
-    <section id="hobbies">
-        <h2>Мої захоплення 🏇</h2>
+    <!-- ІНТЕРЕСИ -->
 
-        <div class="cards">
+    <section class="interests" id="interests">
 
-            <div class="card">
-                <h3>Спорт</h3>
-                <p>
-                    Спорт навчив мене дисципліни,
-                    наполегливості та не боятися труднощів.
-                </p>
-            </div>
+        <div class="section-label">
+            03 — Мої інтереси
+        </div>
 
-            <div class="card">
+        <h2>
+            Те, що мене надихає
+        </h2>
+
+        <div class="interest-grid">
+
+            <div class="interest">
+                <span>🐎</span>
                 <h3>Верхова їзда</h3>
                 <p>
-                    Одне з моїх особливих захоплень —
-                    проводити час із кіньми.
+                    Займаюся верховою їздою з 7 років.
+                    Це одне з моїх найулюбленіших захоплень.
                 </p>
             </div>
 
-            <div class="card">
-                <h3>Нові знання</h3>
+
+            <div class="interest">
+                <span>📚</span>
+                <h3>Читання</h3>
                 <p>
-                    Мені цікаво дізнаватися нове,
-                    розвивати свої навички та пробувати різні речі.
+                    Люблю читати та відкривати для себе
+                    нові історії, ідеї та погляди.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>🌍</span>
+                <h3>Подорожі</h3>
+                <p>
+                    Мені подобається досліджувати нові місця
+                    та отримувати нові враження.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>🏛️</span>
+                <h3>Історія & політика</h3>
+                <p>
+                    Цікавлюся історією, політикою
+                    та темами, які допомагають краще
+                    зрозуміти світ.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>🧘</span>
+                <h3>Пілатес & йога</h3>
+                <p>
+                    Люблю активність, рух та заняття,
+                    які допомагають підтримувати баланс.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>🥾</span>
+                <h3>Походи</h3>
+                <p>
+                    Люблю проводити час на природі
+                    та відкривати нові маршрути.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>🎨</span>
+                <h3>Малювання</h3>
+                <p>
+                    Творчість — ще один спосіб
+                    виражати свої думки та настрій.
+                </p>
+            </div>
+
+
+            <div class="interest">
+                <span>💻</span>
+                <h3>IT & аналітика</h3>
+                <p>
+                    Цікавлюся технологіями, інформацією
+                    та аналітичним підходом до вирішення задач.
                 </p>
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- ВЕРХОВА ЇЗДА -->
+
+    <section class="horse-section">
+
+        <div class="horse-content">
+
+            <div class="section-label">
+                04 — Особливе місце
+            </div>
+
+            <h2>
+                Верхова їзда
+            </h2>
+
+            <p>
+                Коні є важливою частиною мого життя.
+                Я займаюся верховою їздою з 7 років.
+                За цей час це захоплення стало для мене
+                не просто заняттям, а особливим способом
+                проводити час та розвиватися.
+            </p>
+
+            <p>
+                Верхова їзда навчила мене бути уважною,
+                відповідальною та наполегливою.
+            </p>
+
+            <div class="horse-year">
+                З 7 років — і досі 🐎
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- ВОЛОНТЕРСТВО -->
-    <section id="volunteering">
-        <h2>Волонтерство 💙</h2>
 
-        <div class="about">
+    <section class="volunteering" id="volunteering">
+
+        <div class="section-label">
+            05 — Активність
+        </div>
+
+        <h2>
+            Волонтерство
+        </h2>
+
+        <div class="volunteer-box">
+
             <p>
-                Волонтерство для мене — це можливість допомагати іншим,
-                працювати в команді та робити свій внесок у важливі справи.
+                Я також мала можливість долучатися до волонтерських
+                ініціатив та допомагати іншим. Для мене важливо,
+                щоб навіть невелика участь могла бути корисною.
             </p>
 
             <br>
 
             <p>
-                Тут я додам інформацію про свої волонтерські проєкти,
-                досвід та діяльність.
+                Цей досвід показав мені цінність командної роботи,
+                відповідальності та готовності допомагати.
             </p>
+
         </div>
+
+    </section>
+
+
+    <!-- ЦІЛІ -->
+
+    <section class="goals">
+
+        <div class="goals-content">
+
+            <div class="section-label">
+                06 — Майбутнє
+            </div>
+
+            <h2>
+                Куди я рухаюся
+            </h2>
+
+            <p>
+                У майбутньому я хочу займатися справою,
+                яка буде одночасно цікавою для мене
+                та приноситиме користь іншим.
+            </p>
+
+            <div class="goal-line"></div>
+
+            <p>
+                Мені цікаво розвиватися у сферах,
+                пов'язаних з IT, аналітикою та інформацією,
+                продовжувати навчатися, подорожувати
+                та відкривати для себе нові можливості.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- МІЙ СВІТ -->
+
+    <section class="world">
+
+        <div class="section-label">
+            07 — Мій світ
+        </div>
+
+        <h2>
+            Те, що для мене важливо
+        </h2>
+
+        <div class="world-grid">
+
+            <div class="world-card">
+
+                <div class="icon">🤍</div>
+
+                <h3>Родина</h3>
+
+                <p>
+                    Моя родина — важлива частина мого життя.
+                    Особливе місце займає моя молодша сестричка,
+                    яку я дуже люблю.
+                </p>
+
+            </div>
+
+
+            <div class="world-card">
+
+                <div class="icon">🐶</div>
+
+                <h3>Мої собаки</h3>
+
+                <p>
+                    У мене є дві собачки —
+                    кокер-спанієль та німецька вівчарка.
+                </p>
+
+            </div>
+
+
+            <div class="world-card">
+
+                <div class="icon">✨</div>
+
+                <h3>Нові відкриття</h3>
+
+                <p>
+                    Мене надихає можливість дізнатися
+                    щось нове та побачити світ
+                    з іншого боку.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- КОНТАКТИ -->
-    <section id="contact" class="contact">
-        <h2>Зв'язатися зі мною 📩</h2>
+
+    <section class="contact" id="contact">
+
+        <div class="section-label">
+            08 — Контакти
+        </div>
+
+        <h2>
+            Дякую, що завітали
+        </h2>
 
         <p>
-            Дякую, що завітали на мій сайт!
+            Цей сайт — маленька частина мого світу.
+            Попереду ще багато ідей, подорожей,
+            знань та нових відкриттів.
         </p>
+
+        <a href="#home" class="button">
+            На початок ↑
+        </a>
+
     </section>
 
 
     <!-- FOOTER -->
+
     <footer>
-        <p>© 2026 Заріна. Мій особистий сайт.</p>
+
+        <p>
+            © 2026 Заріна · Особистий сайт
+        </p>
+
     </footer>
 
 </body>
